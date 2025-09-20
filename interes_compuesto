@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    double principal, tasa, montoFinal;
+    int vecesAnio, años;
+    
+    cout << "=== CALCULO DE INTERES COMPUESTO ===" << endl;
+    
+    cout << "Ingrese el capital inicial (P): ";
+    cin >> principal;
+    
+    cout << "Ingrese la tasa de interes anual (en decimal, ej: 0.05 para 5%): ";
+    cin >> tasa;
+    
+    cout << "Ingrese el numero de veces que se aplica el interes al año (n): ";
+    cin >> vecesAnio;
+    
+    cout << "Ingrese el numero de años (t): ";
+    cin >> años;
+    
+    montoFinal = principal * pow(1 + (tasa / vecesAnio), vecesAnio * años);
+    
+    cout << fixed << setprecision(2);
+    cout << "\nRESULTADOS:" << endl;
+    cout << "Capital inicial: $" << principal << endl;
+    cout << "Tasa de interes: " << (tasa * 100) << "%" << endl;
+    cout << "Periodos por año: " << vecesAnio << endl;
+    cout << "Tiempo: " << años << " años" << endl;
+    cout << "Monto final: $" << montoFinal << endl;
+    cout << "Intereses ganados: $" << (montoFinal - principal) << endl;
+    
+    return 0;
+}
